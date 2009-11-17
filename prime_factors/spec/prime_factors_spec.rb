@@ -18,10 +18,18 @@ describe PrimeFactors do
     PrimeFactors.of(4).should == [2, 2]
   end
 
+  it "should factor 5" do
+    PrimeFactors.of(5).should == [5]
+  end
+
   it "should factor 6" do
     PrimeFactors.of(6).should == [2, 3]
   end
   
+  it "should factor 7" do
+    PrimeFactors.of(7).should == [7]
+  end
+
   it "should factor 8" do
      PrimeFactors.of(8).should == [2, 2, 2]
   end
