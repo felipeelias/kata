@@ -31,10 +31,18 @@ describe PrimeFactors do
   end
 
   it "should factor 8" do
-     PrimeFactors.of(8).should == [2, 2, 2]
+    PrimeFactors.of(8).should == [2, 2, 2]
   end
 
   it "should factor 9" do
-     PrimeFactors.of(9).should == [3, 3]
+    PrimeFactors.of(9).should == [3, 3]
+  end
+
+  it "should factor other prime" do
+    PrimeFactors.of(13*13*23).should == [13, 13, 23]
+  end
+
+  it "should factor other large powers of two" do
+    PrimeFactors.of(4096).should == [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
   end
 end
