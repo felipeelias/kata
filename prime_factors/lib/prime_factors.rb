@@ -1,5 +1,5 @@
-class PrimeFactors
-  def self.generate(number)
+module PrimeFactors
+  def self.of(number)
     list = []
     if number > 1
       candidate = 2

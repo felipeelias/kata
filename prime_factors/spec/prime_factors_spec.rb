@@ -3,30 +3,30 @@ require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'prime_f
 
 describe PrimeFactors do
   it "should factor 1" do
-    PrimeFactors.generate(1).should == []
+    PrimeFactors.of(1).should == []
   end
 
   it "should factor 2" do
-    PrimeFactors.generate(2).should == [2]
+    PrimeFactors.of(2).should == [2]
   end
 
   it "should factor 3" do
-    PrimeFactors.generate(3).should == [3]
+    PrimeFactors.of(3).should == [3]
   end
   
   it "should factor 4" do
-    PrimeFactors.generate(4).should == [2, 2]
+    PrimeFactors.of(4).should == [2, 2]
   end
 
   it "should factor 6" do
-    PrimeFactors.generate(6).should == [2, 3]
+    PrimeFactors.of(6).should == [2, 3]
   end
   
   it "should factor 8" do
-     PrimeFactors.generate(8).should == [2, 2, 2]
+     PrimeFactors.of(8).should == [2, 2, 2]
   end
 
   it "should factor 9" do
-     PrimeFactors.generate(9).should == [3, 3]
+     PrimeFactors.of(9).should == [3, 3]
   end
 end
