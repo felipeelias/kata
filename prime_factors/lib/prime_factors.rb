@@ -1,17 +1,11 @@
 module PrimeFactors
   def self.of(number)
-    list = []
-    if number > 1
-      candidate = 2
-      while number > 1
-        while number % candidate == 0
-          list << candidate
-          number /= candidate
-        end
-        candidate += 1
-      end
+    factors = []
+    candidate = 2
+    while number > 1
+      factors << candidate and number /= candidate while number % candidate == 0
+      candidate += 1
     end
-    list << number if number > 1
-    list
+    factors
   end  
 end
