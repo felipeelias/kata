@@ -19,6 +19,6 @@ I would like to see marks for my guess
 		| r g c c | p p     |
 		| r g y c | p p p   |
 		| r g y b | p p p p |
-		| r b c c | p m     |
-		| r g b c | p p m   |
-		| r b y g | p p m m |
+		| r b c c | m p     |
+		| r g b c | m p p   |
+		| r b y g | m m p p |
