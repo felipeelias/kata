@@ -34,7 +34,7 @@ describe "RomanNumber" do
     end
   end
 
-  context "from 9 to 18" do
+  context "from 9 to 39" do
     it "should convert 9 to IX" do
       @roman.parse(9).should == "IX"
     end
@@ -42,23 +42,67 @@ describe "RomanNumber" do
     it "should convert 10 to X" do
       @roman.parse(10).should == "X"
     end
-
-    it "should convert 18 to XVIII" do
-      @roman.parse(18).should == "XVIII"
+    
+    it "should convert 39 to XXXIX" do
+      @roman.parse(39).should == "XXXIX"
     end
   end
   
-  context "from 19 to 38" do
-    it "should convert 19 to XIX" do
-      @roman.parse(19).should == "XIX"
+  context "from 40 to 89" do
+    it "should convert 40 to XL" do
+      @roman.parse(40).should == "XL"
+    end
+  
+    it "should convert 50 to L" do
+      @roman.parse(50).should == "L"
+    end
+  
+    it "should convert 89 to LXXXIX" do
+      @roman.parse(89).should == "LXXXIX"
+    end
+  end
+  
+  context "from 90 to 400" do
+    it "should convert 90 to XC" do
+      @roman.parse(90).should == "XC"
+    end
+  
+    it "should convert 100 to C" do
+      @roman.parse(100).should == "C"
+    end
+  
+    it "should convert 200 to CC" do
+      @roman.parse(200).should == "CC"
     end
 
-    it "should convert 20 to XX" do
-      @roman.parse(20).should == "XX"
+    it "should convert 400 to CD" do
+      @roman.parse(400).should == "CD"
+    end
+  end
+
+  context "from 500 to 3999" do
+    it "should convert 500 to D" do
+      @roman.parse(500).should == "D"
+    end
+  
+    it "should convert 600 to DC" do
+      @roman.parse(600).should == "DC"
+    end
+  
+    it "should convert 200 to CC" do
+      @roman.parse(900).should == "CM"
     end
 
-    it "should convert 38 to XXXVIII" do
-      @roman.parse(38).should == "XXXVIII"
+    it "should convert 1000 to M" do
+      @roman.parse(1000).should == "M"
+    end
+
+    it "should convert 2000 to MM" do
+      @roman.parse(2000).should == "MM"
+    end
+
+    it "should convert 3999 to MMMCMXCIX" do
+      @roman.parse(3999).should == "MMMCMXCIX"
     end
   end
 end
