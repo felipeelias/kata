@@ -32,4 +32,22 @@ describe Marker do
       @marker.guess(%w[y b g r]).should == %w[m m m m]
     end
   end
+  
+  context "only right colors in right place" do
+    it "1 color return [p]" do
+      @marker.guess(%w[w w w y]).should == %w[p]
+    end
+
+    it "2 colors return [p p]" do
+      @marker.guess(%w[w w b y]).should == %w[p p]
+    end
+
+    it "3 colors return [p p p]" do
+      @marker.guess(%w[w g b y]).should == %w[p p p]
+    end
+
+    it "all colors return [p p p p]" do
+      @marker.guess(%w[r g b y]).should == %w[p p p p]
+    end
+  end  
 end
