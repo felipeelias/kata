@@ -38,6 +38,10 @@ describe PrimeFactors do
     PrimeFactors.of(9).should == [3, 3]
   end
 
+  it "should factor 10" do
+    PrimeFactors.of(10).should == [2, 5]
+  end
+
   it "should factor other prime" do
     PrimeFactors.of(13*13*23).should == [13, 13, 23]
   end

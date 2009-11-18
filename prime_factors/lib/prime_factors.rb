@@ -1,11 +1,7 @@
 module PrimeFactors
-  def self.of(number)
-    factors = []
-    candidate = 2
-    while number > 1
-      factors << candidate and number /= candidate while number % candidate == 0
-      candidate += 1
-    end
-    factors
+  def self.of(n)
+    return [] if n == 1
+    factor = (2..n).find {|x| n % x == 0} 
+    [factor] + of(n / factor)
   end  
 end
