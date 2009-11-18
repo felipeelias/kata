@@ -1,5 +1,4 @@
 class RomanNumber
-
   NUMERALS = [
     [1000, "M"],
     [900, "CM"],
@@ -16,15 +15,34 @@ class RomanNumber
     [1, "I"],
   ]
   
-  def parse(number)
-    raise "Unknown roman number" if number <= 0 || number > 3999
+  def initialize(number)
+    @arabic = number
+  end
+  
+  def to_s
+    parse
+  end
+  
+  private
+  
+  def valid?
+    @arabic > 0 && @arabic <= 3999
+  end
+  
+  def parse
+    raise "Unknown roman number" unless valid?
     roman = ""
-    arabic = number
+    arabic = @arabic
     for key, value in NUMERALS
       count, arabic = arabic.divmod(key)
       roman << (value * count)
     end
     roman
   end
-  
+end
+
+class Fixnum
+  def to_roman
+    RomanNumber.new(self).to_s
+  end
 end
