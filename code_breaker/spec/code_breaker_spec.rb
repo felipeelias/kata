@@ -5,7 +5,7 @@ include CodeBreaker
 
 describe Marker do
   
-  before(:each) do
+  before(:all) do
     @marker = Marker.new(%w[r g b y])
   end
   
@@ -52,16 +52,16 @@ describe Marker do
   end  
 
   context "mixed right colors in right/wrong place" do
-    it "1 right color/place and 1 wrong place return [p m]" do
-      @marker.guess(%w[r b w w]).should == %w[p m]
+    it "1 right color/place and 1 wrong place return [m p]" do
+      @marker.guess(%w[r b w w]).should == %w[m p]
     end
 
-    it "2 right color/place and 2 wrong place return [p m p m]" do
-      @marker.guess(%w[r y b g]).should == %w[p m p m]
+    it "2 right color/place and 2 wrong place return [m m p p]" do
+      @marker.guess(%w[r y b g]).should == %w[m m p p]
     end
 
-    it "2 right color/place and 2 wrong place return [m p m p] (inverse order)" do
-      @marker.guess(%w[y g r y]).should == %w[m p m p]
+    it "2 right color/place and 2 wrong place return [m m p p] (inverse order)" do
+      @marker.guess(%w[b g r y]).should == %w[m m p p]
     end
   end  
 
