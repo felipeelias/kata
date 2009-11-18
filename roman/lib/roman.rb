@@ -1,17 +1,26 @@
 class RomanNumber
 
-  ROMANS = {
-    1 => "I",
-    5 => "V",
-    10 => "X",
-    50 => "L",
-    100 => "C",
-    500 => "D",
-    1000 => "M",
-  }
+  NUMERALS = [
+    [1000, "M"],
+    [500, "D"],
+    [100, "C"],
+    [50, "L"],
+    [40, "XL"],
+    [10, "X"],
+    [9, "IX"],
+    [5, "V"],
+    [4, "IV"],
+    [1, "I"],
+  ]
   
   def parse(number)
-    ROMANS[number]
+    roman = ""
+    arabic = number
+    for key, value in NUMERALS
+      count, arabic = arabic.divmod(key)
+      roman << (value * count)
+    end
+    roman
   end
   
 end
