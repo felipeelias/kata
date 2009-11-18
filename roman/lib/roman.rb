@@ -17,6 +17,7 @@ class RomanNumber
   ]
   
   def parse(number)
+    raise "Unknown roman number" if number <= 0 || number > 3999
     roman = ""
     arabic = number
     for key, value in NUMERALS

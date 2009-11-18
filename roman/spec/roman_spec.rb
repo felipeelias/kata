@@ -105,4 +105,18 @@ describe "RomanNumber" do
       @roman.parse(3999).should == "MMMCMXCIX"
     end
   end
+  
+  context "unknown numbers" do
+    it "cannot convert 0" do
+      lambda { @roman.parse(0) }.should raise_error("Unknown roman number")
+    end
+
+    it "cannot convert negative numbers" do
+      lambda { @roman.parse(-100) }.should raise_error("Unknown roman number")
+    end
+
+    it "cannot convert numbers greater than 3999" do
+      lambda { @roman.parse(4000) }.should raise_error("Unknown roman number")
+    end
+  end
 end
