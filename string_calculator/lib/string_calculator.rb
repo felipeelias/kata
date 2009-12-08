@@ -8,6 +8,10 @@ module StringCalculator
   private
   
   def numbers
-    @numbers ||= self.split(',').map { |s| s.to_i }
+    @numbers ||= self.split(delimiter).map { |s| s.to_i }
+  end
+  
+  def delimiter
+    @delimiter ||= self =~ /^\/\/(.)/ ? $1 : /[,\n]/
   end
 end

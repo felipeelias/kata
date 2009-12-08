@@ -7,7 +7,7 @@ Spec::Matchers.define :add do |sum|
   end
   
   failure_message_for_should do |string|
-    "Expected #{string} add #{sum} but got #{@result}"
+    "Expected #{string} returns #{sum} but got #{@result}"
   end
 end
 
@@ -63,4 +63,20 @@ describe StringCalculator do
       "1,2,3,4,5".should add(15)
     end
   end  
+  
+  context "newline delimiter" do
+    it "returns 10 for 1\n2,3,4" do
+      "1\n2,3,4".should add(10)
+    end
+  end
+  
+  context "setting another delimiter" do
+    it "should set ; as delimiter" do
+      "//;1;2;3;4".should add(10)
+    end
+
+    it "should set | as delimiter" do
+      "//|1|2|3|4".should add(10)
+    end
+  end
 end
