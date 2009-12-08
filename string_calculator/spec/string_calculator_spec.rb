@@ -53,4 +53,14 @@ describe StringCalculator do
       "100,27,52".should add(179)
     end
   end
+  
+  context "4+ numbers" do
+    it "returns 10 for 1,2,3,4" do
+      "1,2,3,4".should add(10)
+    end
+
+    it "returns 15 for 1,2,3,4,5" do
+      "1,2,3,4,5".should add(15)
+    end
+  end  
 end
