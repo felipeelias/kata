@@ -79,4 +79,14 @@ describe StringCalculator do
       "//|\n1|2|3|4".should add(10)
     end
   end
+  
+  context "with negative numbers" do
+    it "should raise an error with 1 negative number" do
+      lambda { "-3".extend(StringCalculator).add }.should raise_error("Negatives not allowed: -3")
+    end
+
+    it "should raise an error with negative numbers" do
+      lambda { "1,2,-3,-4".extend(StringCalculator).add }.should raise_error("Negatives not allowed: -3, -4")
+    end
+  end
 end
