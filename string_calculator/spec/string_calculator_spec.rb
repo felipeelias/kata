@@ -72,11 +72,11 @@ describe StringCalculator do
   
   context "setting another delimiter" do
     it "should set ; as delimiter" do
-      "//;1;2;3;4".should add(10)
+      "//;\n1;2;3;4".should add(10)
     end
 
     it "should set | as delimiter" do
-      "//|1|2|3|4".should add(10)
+      "//|\n1|2|3|4".should add(10)
     end
   end
 end
