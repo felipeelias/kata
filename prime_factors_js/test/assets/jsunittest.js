@@ -917,9 +917,15 @@ JsUnitTest.Unit.Testcase = function(name, test, setup, teardown) {
 };
 // import JsUnitTest.Unit.Assertions
 
-for (method in JsUnitTest.Unit.Assertions) {
-  JsUnitTest.Unit.Testcase.prototype[method] = JsUnitTest.Unit.Assertions[method];
+JsUnitTest.Unit.add_tests = function(tests) {
+  for (method in tests) {
+    JsUnitTest.Unit.Testcase.prototype[method] = tests[method];
+  }
 }
+
+JsUnitTest.Unit.add_tests(JsUnitTest.Unit.Assertions);
+
+var add_tests = JsUnitTest.Unit.add_tests;
 
 JsUnitTest.Unit.Testcase.prototype.isWaiting         = false;
 JsUnitTest.Unit.Testcase.prototype.timeToWait        = 1000;
